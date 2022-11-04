@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to Pug
+  button(type = "button", class = "btn btn-success", onClick = "doBump()") Click<br>
+  div(id = "bump") Bump the count
+
+    script.
+      var count = 0;
+      var bump = 1;
+      function doBump(){
+        count = count + 1;
+        bump = 1;
+        document.getElementById("bump").innerHTML = 'Count '+ count +' bump ' + count;
+      }

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title 
+  - var results = [{"name": "Deeksha", "age": 21, "place": "India"}, {"name": "Vidya", "age": 22, "place": "Guntur"}, {"name": "Swathi", "age": 25, "place": "India"}]
+    div(class = 'container-fluid')
+        div(class = 'row')
+            each i,j in results 
+                div(class="col-sm-2", onClick=`buy(${j})`) Name : #{i["name"]} <br> Age : #{i["age"]} <br> Place : #{i["place"]}
+                script.
+                  function buy(val) {
+                    alert(`You purchased item ${val}`)
+                  } 
