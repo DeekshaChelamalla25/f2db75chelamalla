@@ -1,13 +1,21 @@
 extends layout
 
 block content
-  h1= title 
-  - var results = [{"name": "Deeksha", "age": 21, "place": "India"}, {"name": "Vidya", "age": 22, "place": "Guntur"}, {"name": "Swathi", "age": 25, "place": "India"}]
-    div(class = 'container-fluid')
-        div(class = 'row')
-            each i,j in results 
-                div(class="col-sm-2", onClick=`buy(${j})`) Name : #{i["name"]} <br> Age : #{i["age"]} <br> Place : #{i["place"]}
-                script.
-                  function buy(val) {
-                    alert(`You purchased item ${val}`)
-                  } 
+  h1= title
+  - var results=res;
+  
+
+  div(class="container-fluid")
+    div(class="row")
+      each item, key in results
+        - var value=item;
+        - var index=key;
+        div(class="col-sm-2", onclick=`buy(${index})`) name is #{item.name} <br /> age is #{item.age} 
+
+  script.
+   function buy(x) 
+   {
+     alert(`You purchased item ${x}`)
+   } 
+      
+    

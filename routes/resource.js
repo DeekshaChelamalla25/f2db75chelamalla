@@ -3,6 +3,7 @@ var router = express.Router();
  
 // Require controller modules. 
 var api_controller = require('../controllers/api'); 
+
 var employee_controller = require('../controllers/employee'); 
  
 /// API ROUTE /// 
@@ -26,5 +27,5 @@ router.get('/employee/:id', employee_controller.employee_detail);
  
 // GET request for list of all employee items. 
 router.get('/employee', employee_controller.employee_list); 
- 
+
 module.exports = router; 
