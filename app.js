@@ -67,21 +67,21 @@ async function recreateDB(){
   await employee.deleteMany(); 
  
   let instance1 = new 
-  employee({name:"Deeksha",  age:21}); 
+  employee({name:"Deeksha",  age:21, salary:1900}); 
   instance1.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("First object saved") 
   }); 
 
   let instance2 = new 
-  employee({name:"Swathi",  age:27}); 
+  employee({name:"Swathi",  age:27, salary:2000}); 
   instance2.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("Second object saved") 
   }); 
 
   let instance3 = new 
-  employee({name:"Samhyuktha",  age:21}); 
+  employee({name:"Samhyuktha",  age:21, salary:2500}); 
   instance3.save( function(err,doc) { 
       if(err) return console.error(err); 
       console.log("Third object saved") 
