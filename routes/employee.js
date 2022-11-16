@@ -9,7 +9,8 @@ router.get('/detail', employee_controlers.employee_view_one_Page);
 router.get('/create', employee_controlers.employee_create_Page); 
 /* GET create update page */ 
 router.get('/update', employee_controlers.employee_update_Page); 
- 
+ /* GET delete employee page */ 
+router.get('/delete', employee_controlers.employee_delete_Page); 
 
 
 module.exports = router;
