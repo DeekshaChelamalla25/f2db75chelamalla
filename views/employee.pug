@@ -1,21 +1,21 @@
 extends layout
-
 block content
-  h1= title
-  - var results=res;
-  
+    div(class="container-fluid")
+        h1= title
+    - let result=results 
+        div(class="container-fluid")
+        div(class="row m-1")
+        each item in result
+         -let destination = `dispatch(\"/employee/update?id=${item._id}\")`
+         div(class="row-sm-2", class="m-1") Item#{item.name}(#{item.age}) is #{item.salary}
+          button.btn( class="btn-primary ml-1", onclick= destination) Update
 
-  div(class="container-fluid")
-    div(class="row")
-      each item, key in results
-        - var value=item;
-        - var index=key;
-        div(class="col-sm-2", onclick=`buy(${index})`) name is #{item.name} <br /> age is #{item.age} <br /> salary is #{item.salary}
-
-  script.
-   function buy(x) 
-   {
-     alert(`You purchased item ${x}`)
-   } 
-      
-    
+    script.
+        function buy(itemNo)
+        {
+            alert(`You purchased Item ${itemNo+1}`)
+        }
+    script.
+        function dispatch(path){
+            window.location.href=path
+        }

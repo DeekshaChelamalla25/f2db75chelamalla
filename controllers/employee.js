@@ -80,7 +80,7 @@ failed`);
 exports.employee_view_all_Page = async function(req, res) { 
     try{ 
         theEmployees = await employee.find(); 
-        res.render('employee', { title: 'Employee Search Results', res: theEmployees }); 
+        res.render('employee', { title: 'Employee Search Results', results: theEmployees }); 
     } 
     catch(err){ 
         res.status(500); 
