@@ -3,29 +3,29 @@ block content
     h1= title
 
     if (toShow == null)
-        h2 No instance to delete
+      h2 No instance to delete
     else
-        - let employeeid = toShow._id
-        - let employeename = toShow.name
-        - let employeeage = toShow.age
-        - let employeesalary = toShow.salary
-        - let actionid = "/resource/employee/" + employeeid
-        script let actionid = "#{actionid}"
-        div
-            div.row
-                div(class='employeeAttr mr-3') Employee ID is:
-                div #{employeeid}
-            div.row
-                div(class='employeeAttr mr-3') Employee Name is:
-                div #{employeename}
-            div.row
-                div(class='employeeAttr mr-3') Employee Age is:
-                div #{employeeage}
-            div.row
-                div(class='employeeAttr mr-3') Employee Salary is:
-                div #{employeesalary}
-        button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete
-        button(class="btn btn-secondary m-2" onclick="cancel()") Cancel
+      - let _id = toShow._id
+      - let employeename = toShow.name
+      - let employeeage = toShow.age
+      - let employeesalary = toShow.salary
+      - let actionid = "/resource/employee/" + _id
+      //script let actionid = "#{actionid}" 
+      div 
+        div.row 
+          div(class='employeeAttr mr-3') Employee ID is: 
+          div #{_id} 
+        div.row 
+          div(class='employeeAttr mr-3') Employee Name is: 
+          div #{employeename} 
+        div.row 
+          div(class='employeeAttr mr-3') Employee Age is: 
+          div #{employeeage}
+        div.row 
+          div(class='employeeAttr mr-3') Employee Salary is: 
+          div #{employeesalary} 
+      button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete
+      button(class="btn btn-secondary m-2" onclick="cancel()") Cancel
     script.
         function cancel() {
                 // Go back to the home page for the costume collection
